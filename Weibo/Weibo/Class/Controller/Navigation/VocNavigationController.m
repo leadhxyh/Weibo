@@ -14,6 +14,22 @@
 
 @implementation VocNavigationController
 
++ (void)initialize {
+    //设置所有baritem的样式
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    NSMutableDictionary *textAttr = [NSMutableDictionary dictionary];
+    //设置字体颜色
+    textAttr[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    //设置字体大小
+    textAttr[NSFontAttributeName] = [UIFont systemFontOfSize:13.0];
+    [item setTitleTextAttributes:textAttr forState:UIControlStateNormal];
+    
+    NSMutableDictionary *disableTextAttr = [NSMutableDictionary dictionary];
+    disableTextAttr[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.8];
+    disableTextAttr[NSFontAttributeName] = [UIFont systemFontOfSize:13.0];
+    [item setTitleTextAttributes:disableTextAttr forState:UIControlStateDisabled];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -28,24 +44,10 @@
         viewController.hidesBottomBarWhenPushed = YES;
         
         //返回按钮
-        UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-        //添加图片
-        [backBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_back"] forState:UIControlStateNormal];
-        [backBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_back_highlighted"] forState:UIControlStateSelected];
-        //设置尺寸
-        backBtn.size = backBtn.currentBackgroundImage.size;
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back:) image:@"navigationbar_back" highImage:@"navigationbar_back_highlighted"];
         
         //更多按钮
-        UIButton *moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [moreBtn addTarget:self action:@selector(more:) forControlEvents:UIControlEventTouchUpInside];
-        //添加图片
-        [moreBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_more"] forState:UIControlStateNormal];
-        [moreBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_more_highlighted"] forState:UIControlStateSelected];
-        //设置尺寸
-        moreBtn.size = moreBtn.currentBackgroundImage.size;
-        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:moreBtn];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(more:) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
     }
     
     [super pushViewController:viewController animated:YES];

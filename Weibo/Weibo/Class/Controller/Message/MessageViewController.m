@@ -14,9 +14,18 @@
 
 @implementation MessageViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //设置baritem不可使用状态，必须要在未加载调用，放在viewDidLoad中不可以。
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIBarButtonItem *writeMsgItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(writeMsg)];
+    self.navigationItem.rightBarButtonItem = writeMsgItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +33,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)writeMsg {
+    
 }
-*/
 
 @end
