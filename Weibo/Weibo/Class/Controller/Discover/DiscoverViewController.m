@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
+#import "VocSearchBar.h"
 
 @interface DiscoverViewController ()
 
@@ -18,21 +19,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     VocLog(@"DiscoverViewController->viewDidLoad");
+    
+    //此处加入系统自带搜索框，但效果不好（边框不明显）
+//    UISearchBar *searchBar = [[UISearchBar alloc] init];
+//    searchBar.height = 30;
+//    self.navigationItem.titleView = searchBar;
+    
+    VocSearchBar *searchField = [[VocSearchBar alloc] init];
+    searchField.width = [UIScreen mainScreen].bounds.size.width - 20;
+    searchField.height = 30;
+    
+    self.navigationItem.titleView = searchField;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

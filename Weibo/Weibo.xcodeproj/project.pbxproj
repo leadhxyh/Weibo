@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		665E8ED81B8C1D2600AD1B7D /* VocSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 665E8ED71B8C1D2600AD1B7D /* VocSearchBar.m */; };
 		668F00AA1B858BA000600974 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F00A91B858BA000600974 /* UIBarButtonItem+Extension.m */; };
 		66F98D201B82B42A0012BBE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F98D1F1B82B42A0012BBE3 /* main.m */; };
 		66F98D231B82B42A0012BBE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F98D221B82B42A0012BBE3 /* AppDelegate.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		665E8ED61B8C1D2600AD1B7D /* VocSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocSearchBar.h; sourceTree = "<group>"; };
+		665E8ED71B8C1D2600AD1B7D /* VocSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocSearchBar.m; sourceTree = "<group>"; };
 		668F00A81B858BA000600974 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		668F00A91B858BA000600974 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		66F98D1A1B82B42A0012BBE3 /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		665E8ED51B8C1AF000AD1B7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				665E8ED61B8C1D2600AD1B7D /* VocSearchBar.h */,
+				665E8ED71B8C1D2600AD1B7D /* VocSearchBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		66F98D111B82B42A0012BBE3 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 		66F98D431B82B6DB0012BBE3 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				665E8ED51B8C1AF000AD1B7D /* View */,
 				66F98D721B8355CC0012BBE3 /* Category */,
 				66F98D441B82B6DB0012BBE3 /* Controller */,
 			);
@@ -355,6 +368,7 @@
 				66F98D261B82B42A0012BBE3 /* ViewController.m in Sources */,
 				66F98D791B835BDB0012BBE3 /* UIView+Extension.m in Sources */,
 				66F98D661B82FF730012BBE3 /* DiscoverViewController.m in Sources */,
+				665E8ED81B8C1D2600AD1B7D /* VocSearchBar.m in Sources */,
 				66F98D631B82FF580012BBE3 /* MessageViewController.m in Sources */,
 				66F98D231B82B42A0012BBE3 /* AppDelegate.m in Sources */,
 				66F98D691B82FF8C0012BBE3 /* ProfileViewController.m in Sources */,
