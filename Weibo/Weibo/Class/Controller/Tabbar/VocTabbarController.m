@@ -42,7 +42,7 @@
 }
 
 - (void)addChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
-    vc.view.backgroundColor = VocRandomColor;
+//    vc.view.backgroundColor = VocRandomColor;
     vc.title = title;
     
     NSMutableDictionary *textAttr = [NSMutableDictionary dictionary];

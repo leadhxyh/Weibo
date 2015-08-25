@@ -16,9 +16,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    //设置baritem不可使用状态，必须要在未加载调用，放在viewDidLoad中不可以。
-    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)viewDidLoad {
@@ -26,6 +23,11 @@
     // Do any additional setup after loading the view.
     UIBarButtonItem *writeMsgItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(writeMsg)];
     self.navigationItem.rightBarButtonItem = writeMsgItem;
+    
+    //设置baritem不可使用状态，必须要在未加载调用，放在viewDidLoad中不可以。
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    VocLog(@"MessageViewController->viewDidLoad");
 }
 
 - (void)didReceiveMemoryWarning {

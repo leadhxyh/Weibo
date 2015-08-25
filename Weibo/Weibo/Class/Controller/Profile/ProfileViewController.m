@@ -21,6 +21,7 @@
     UIBarButtonItem *settingBarItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setting)];
     self.navigationItem.rightBarButtonItem = settingBarItem;
     
+    VocLog(@"ProfileViewController->viewDidLoad");
 }
 
 - (void)didReceiveMemoryWarning {
